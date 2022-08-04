@@ -1,4 +1,4 @@
-package com.devsuperior.dscatalog.services.resources.exceptions;
+package com.devsuperior.dscatalog.resources.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

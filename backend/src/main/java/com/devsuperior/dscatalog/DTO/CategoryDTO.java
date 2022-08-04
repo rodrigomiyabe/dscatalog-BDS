@@ -1,6 +1,6 @@
 package com.devsuperior.dscatalog.DTO;
 
-import com.devsuperior.dscatalog.services.entities.Category;
+import com.devsuperior.dscatalog.entities.Category;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
