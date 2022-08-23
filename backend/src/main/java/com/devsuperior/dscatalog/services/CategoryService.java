@@ -9,10 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 
 import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
@@ -27,7 +26,7 @@ public class CategoryService {
         this.categoryRepository = categoryRepository;
     }
     @Transactional(readOnly = true)
-    public Page<CategoryDTO> findAllPaged(PageRequest pageRequest){
+    public Page<CategoryDTO> findAllPaged(Pageable pageRequest){
        Page<Category> categoryList = categoryRepository.findAll(pageRequest);
 
      return categoryList.map(CategoryDTO::new);
@@ -60,6 +59,7 @@ public class CategoryService {
 
     }
 
+    @Transactional()
     public void delete(Long id){
         try{
             categoryRepository.deleteById(id);
